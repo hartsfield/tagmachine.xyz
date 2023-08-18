@@ -7,14 +7,18 @@
     width: fit-content;
     cursor: pointer;
     font-weight: 400;
-    color: #ffe4a8;
+    /* color: #ffe4a8; */
+    /* color: #ffeda8; */
+    color: cornsilk;
     font-size: 0.9em;
 }
 .homeButt {
     background-color: #913200;
+    font-weight: 600;
 }
 .newPost {
     background: #709624;
+    background-color: #8f9100;
 }
 .nav-inner {
     display: flex;
