@@ -1,0 +1,37 @@
+{{ define "nav.css" }}
+.navButt {
+    box-shadow: 5px 5px 0px #5e8f97;
+    padding: 0.3em 1em;
+    margin: 1em 0;
+    border-radius: 0.2em;
+    width: fit-content;
+    cursor: pointer;
+    font-weight: 400;
+    color: #ffe4a8;
+    font-size: 0.9em;
+}
+.homeButt {
+    background-color: #913200;
+}
+.newPost {
+    background: #709624;
+}
+.nav-inner {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}
+.popular {
+    background-color: #bd8c17;
+}
+.newest {
+    background-color: #33907e;
+}
+.leftNav {
+    display: flex;
+}
+.leftNav > .navButt {
+    margin: 1em 0.5em 1em 0;
+}
+{{end}}
