@@ -14,6 +14,7 @@
     /* background: #fffee4; */
     background-color: white;
     font-weight: 400;
+    animation: 500ms linear scalin;
 }
 .post-reply {
     border-right: none;

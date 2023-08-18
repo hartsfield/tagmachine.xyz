@@ -8,7 +8,7 @@ function togglePostForm() {
     } else {
         document.getElementById("section-submitForm").style.display = "none";
         document.getElementById("newPostButt").innerHTML = "★";
-        document.getElementById("newPostButt").style.background = "#8f9100";
+        document.getElementById("newPostButt").style.background = "#9cd4d5";
     }
 
 }

@@ -2,9 +2,9 @@
 <div class="section-outer postElement-outer section-postElement" id="section-postElement">
     <div class="post" id="post_{{.Id}}">
         {{ if eq .MediaType "image" }}
-        <div class="post-media-outer"><img class="post-media" src="{{.Media}}" /></div>
+        <div class="post-media-outer" onclick="window.location = window.location.origin + '/post/{{ .Id }}'"><img class="post-media" src="{{.Media}}" /></div>
         {{ else }}
-        <div class="post-media-outer"><video autoplay loop muted class="post-media" src="/{{.Media}}" ></video></div>
+        <div class="post-media-outer" onclick="window.location = window.location.origin + '/post/{{ .Id }}'"><video autoplay loop muted class="post-media" src="/{{.Media}}" ></video></div>
         {{end}}
         <div class="postBottom">
             {{ template "rootHead.tmpl" . }}

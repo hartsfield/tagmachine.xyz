@@ -4,6 +4,7 @@
   border-top-left-radius: 0.4em;
   border-top-right-radius: 0.4em;
     border-bottom: 1px solid #663569;
+    cursor: pointer;
 }
 .postBottom {
   padding: 1em;
