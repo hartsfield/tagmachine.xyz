@@ -25,7 +25,7 @@ var (
 	rdb     = redis.NewClient(&redis.Options{
 		Addr:     redisIP + ":6379",
 		Password: "",
-		DB:       1,
+		DB:       2,
 	})
 	// redis context
 	rdx = context.Background()
