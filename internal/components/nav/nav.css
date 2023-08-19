@@ -26,6 +26,7 @@
     background-color: #9cd4d5;
     border: 1px solid #538d99;
     text-shadow: 1px 1px 2px #1b8891;
+    color: cornsilk;
 }
 .nav-inner {
     display: flex;
@@ -35,6 +36,8 @@
 }
 .popular {
     background-color: #bd8c17;
+    border: 1px solid #875d11;
+    text-shadow: 1px 1px 1px #74470d;
 }
 .newest {
     background-color: #33907e;
