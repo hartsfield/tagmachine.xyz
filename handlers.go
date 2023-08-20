@@ -194,6 +194,8 @@ func handleForm(w http.ResponseWriter, r *http.Request) {
 				fileExtension = "png"
 			case "image/jpeg":
 				fileExtension = "jpg"
+			case "image/gif":
+				fileExtension = "gif"
 			case "video/mp4":
 				fileExtension = "mp4"
 			case "video/webm":
