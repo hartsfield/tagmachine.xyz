@@ -183,7 +183,7 @@ func handleForm(w http.ResponseWriter, r *http.Request) {
 				ajaxResponse(w, map[string]string{
 					"success": "false",
 					"replyID": "",
-					"error":   "png - jpg - webm - mp4 only",
+					"error":   "png - jpg - gif - webm - mp4 only",
 				})
 				return
 			}
