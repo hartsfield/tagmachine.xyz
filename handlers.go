@@ -179,7 +179,7 @@ func handleForm(w http.ResponseWriter, r *http.Request) {
 				log.Println(err)
 			}
 			mt := http.DetectContentType(fileBytes)
-			if mt != "image/jpeg" && mt != "image/png" && mt != "video/mp4" && mt != "video/webm" {
+			if mt != "image/jpeg" && mt != "image/png" && mt != "video/mp4" && mt != "video/webm" && mt != "image/gif" {
 				ajaxResponse(w, map[string]string{
 					"success": "false",
 					"replyID": "",
