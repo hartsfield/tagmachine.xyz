@@ -16,7 +16,7 @@ func bolt() (ctx context.Context, srv *http.Server) {
 
 	var mux *http.ServeMux
 	mux = http.NewServeMux()
-	mux.HandleFunc("/", home)
+	mux.Handle("/", checkAuth(http.HandlerFunc(home)))
 	mux.HandleFunc("/ranked", getByRanked)
 	mux.HandleFunc("/chron", getByChron)
 	mux.HandleFunc("/post/", viewPost)

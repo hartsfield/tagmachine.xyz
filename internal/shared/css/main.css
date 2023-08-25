@@ -9,6 +9,12 @@ body, html {
   font-weight: 200;
   margin: 0 1em;
   background-color: cornsilk;
+      background-color: #ffe9d7;
+    background-color: #fffded;
+}
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: #bda23c;
+  opacity: 1; /* Firefox */
 }
 .reply-form {
   display: none;

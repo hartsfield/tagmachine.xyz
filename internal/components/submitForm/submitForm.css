@@ -11,6 +11,9 @@ textarea  {
     font-weight: 200;
     box-shadow: 5px 5px 0px #5e8f97;
     animation: 500ms linear scalin;
+
+    border: 1px solid #e8d39f;
+    background: #ffffdf;
 }
 #errorField {
     color: #9f4f04;
@@ -23,6 +26,7 @@ textarea  {
     padding: 0.2em;
     padding-bottom: 0.3em;
     box-shadow: 5px 5px 0px;
+    border: 1px solid #deb85f;
 }
 .mainForm {
     display: flex;
@@ -37,15 +41,17 @@ textarea  {
     width: 25%;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     background-color: #bc732a;
+    border: 1px solid #835a28;
+    text-shadow: 1px 1px 2px #633300;
 
 }
 .uploadButt {
     cursor: pointer;
     background-color: #90b1a7;
     padding: 0.5em;
-    border-radius: 0.3em;
     text-align: center;
     width: 60%;
+    border: 1px solid cadetblue;
 }
 input[type="file"] {
     display: none;

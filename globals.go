@@ -16,10 +16,12 @@ const ctxkey ckey = iota
 
 var (
 	// servicePort is the port this program will run on
-	servicePort                    = ":" + os.Getenv("servicePort")
-	logFilePath                    = os.Getenv("logFilePath")
-	templates   *template.Template = template.New("main")
-	companyName string             = "BoltApp"
+	servicePort = ":" + os.Getenv("servicePort")
+	logFilePath = os.Getenv("logFilePath")
+	// hmacSampleSecret is used for creating the token
+	hmacSampleSecret                    = []byte(os.Getenv("hmacss"))
+	templates        *template.Template = template.New("main")
+	companyName      string             = "BoltApp"
 	// connect to redis
 	redisIP = os.Getenv("redisIP")
 	rdb     = redis.NewClient(&redis.Options{

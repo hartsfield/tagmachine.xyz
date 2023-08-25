@@ -1,6 +1,21 @@
 package main
 
-import "time"
+import (
+	"time"
+
+	"github.com/golang-jwt/jwt"
+)
+
+// credentials are user credentials and are used in the HTML templates and also
+// by handlers that do authorized requests
+type credentials struct {
+	Name       string   `json:"username"`
+	Password   string   `json:"password"`
+	IsLoggedIn bool     `json:"isLoggedIn"`
+	Posts      []string `json:"posts"`
+	Score      uint     `json:"score"`
+	jwt.StandardClaims
+}
 
 // post is the structure of a user post. Posts are created by users and stored
 // in redis.

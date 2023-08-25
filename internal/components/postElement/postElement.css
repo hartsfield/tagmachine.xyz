@@ -1,12 +1,16 @@
 {{ define "postElement.css" }}
 .post-media {
   width: 100%;
-  border-top-left-radius: 0.4em;
-  border-top-right-radius: 0.4em;
+  border-radius: 0.4em;
     cursor: pointer;
+border: 1px solid #ffc884;
+}
+.post-media-outer {
+    padding: 0.5em;
+    padding-bottom: 0em;
 }
 .postBottom {
-  padding: 1em;
+  padding: 0.5em;
 }
 .postBody {
   width: 100%;
