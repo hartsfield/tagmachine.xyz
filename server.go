@@ -14,17 +14,9 @@ func bolt() (ctx context.Context, srv *http.Server) {
 	template.Must(templates.ParseGlob("internal/components/*/*"))
 	template.Must(templates.ParseGlob("internal/shared/*/*"))
 
-	var mux *http.ServeMux
-	mux = http.NewServeMux()
-	mux.Handle("/", checkAuth(http.HandlerFunc(home)))
-	mux.Handle("/ranked", checkAuth(http.HandlerFunc(getByRanked)))
-	mux.Handle("/chron", checkAuth(http.HandlerFunc(getByChron)))
-	mux.Handle("/post/", checkAuth(http.HandlerFunc(viewPost)))
-	mux.Handle("/submitForm", checkAuth(http.HandlerFunc(handleForm)))
-	mux.HandleFunc("/login", signin)
-	mux.HandleFunc("/signup", signup)
-	mux.HandleFunc("/logout", logout)
+	var mux *http.ServeMux = http.NewServeMux()
 	mux.Handle("/public/", http.StripPrefix("/public/", http.FileServer(http.Dir("public"))))
+	registerRoutes(mux)
 
 	srv = serverFromConf(mux)
 	ctx, cancelCtx := context.WithCancel(context.Background())

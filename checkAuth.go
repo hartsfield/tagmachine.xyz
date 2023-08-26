@@ -9,7 +9,7 @@ import (
 // checkAuth parses and renews the authentication token, and adds it to the
 // context. checkAuth is used as a middleware function for routes that allow or
 // require authentication.
-func checkAuth(next http.Handler) http.Handler {
+func checkAuth(next http.HandlerFunc) http.HandlerFunc {
 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		// create a generic user object that not signed in to be used
 		// as a placeholder until credentials are verified.
