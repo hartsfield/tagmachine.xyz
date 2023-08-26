@@ -13,6 +13,11 @@
     font-size: 0.9em;
     animation: 500ms linear scalin;
 }
+.loginButt {
+    background-color: darkred;
+    color: cornsilk;
+    
+}
 .homeButt {
     /* background-color: #913200; */
     background-color: #b8bb0c;

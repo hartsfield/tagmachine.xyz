@@ -17,4 +17,5 @@ function togglePostForm() {
 function getStream(sortOrder) {
     window.location = window.location.origin + "/" + sortOrder;
 }
+
 {{end}}

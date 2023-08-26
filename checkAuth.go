@@ -13,7 +13,7 @@ func checkAuth(next http.Handler) http.Handler {
 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		// create a generic user object that not signed in to be used
 		// as a placeholder until credentials are verified.
-		user := credentials{IsLoggedIn: false}
+		user := &credentials{IsLoggedIn: false}
 		// ctx is a user who isn't logged in
 		ctx := context.WithValue(r.Context(), ctxkey, user)
 

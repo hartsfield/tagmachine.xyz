@@ -34,7 +34,7 @@ func newClaims(w http.ResponseWriter, r *http.Request, c *credentials) (ctxx con
 		[]string{},
 		0,
 		jwt.StandardClaims{
-			ExpiresAt: 15000,
+			// ExpiresAt: 15000,
 			// Issuer:    "test",
 		},
 	}

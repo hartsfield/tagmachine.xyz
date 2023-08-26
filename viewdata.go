@@ -47,4 +47,5 @@ type viewData struct {
 	Stream      []*post
 	Nonce       string
 	Order       string `json:"order" redis:"order"`
+	UserData    *credentials
 }

@@ -1,0 +1,26 @@
+{{ define "loginForm.css" }}
+.loginForm-outer {
+    display: none;
+}
+.formInputs {
+    display: flex;
+    justify-content: space-between;
+}
+.username, .password {
+    width: 30%;
+    cursor: unset;
+    color: black;
+    caret-color: red;
+    border: 1px solid lightgray;
+}
+.loginFormButt, .signupFormButt {
+    width: 15%;
+    text-align: center;
+}
+.loginFormButt {
+    background-color: lightgreen;
+}
+.signupFormButt {
+    background-color: lightblue;
+}
+{{end}}

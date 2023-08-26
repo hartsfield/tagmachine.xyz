@@ -16,6 +16,16 @@ body, html {
     color: #bda23c;
   opacity: 1; /* Firefox */
 }
+input {
+    border: none;
+    outline: none;
+    caret-color: transparent;
+}
+input:focus-visible {
+    border: none;
+    outline: none;
+    caret-color: transparent;
+}
 .reply-form {
   display: none;
 }

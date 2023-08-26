@@ -17,10 +17,13 @@ func bolt() (ctx context.Context, srv *http.Server) {
 	var mux *http.ServeMux
 	mux = http.NewServeMux()
 	mux.Handle("/", checkAuth(http.HandlerFunc(home)))
-	mux.HandleFunc("/ranked", getByRanked)
-	mux.HandleFunc("/chron", getByChron)
-	mux.HandleFunc("/post/", viewPost)
-	mux.HandleFunc("/submitForm", handleForm)
+	mux.Handle("/ranked", checkAuth(http.HandlerFunc(getByRanked)))
+	mux.Handle("/chron", checkAuth(http.HandlerFunc(getByChron)))
+	mux.Handle("/post/", checkAuth(http.HandlerFunc(viewPost)))
+	mux.Handle("/submitForm", checkAuth(http.HandlerFunc(handleForm)))
+	mux.HandleFunc("/login", signin)
+	mux.HandleFunc("/signup", signup)
+	mux.HandleFunc("/logout", logout)
 	mux.Handle("/public/", http.StripPrefix("/public/", http.FileServer(http.Dir("public"))))
 
 	srv = serverFromConf(mux)

@@ -1,0 +1,15 @@
+{{ define "loginForm.tmpl" }}
+<div class="section-outer loginForm-outer section-loginForm" id="section-loginForm">
+  <form class="loginForm" id="fileUploadForm" enctype="multipart/form-data">
+    <div class="formInputs">
+      <input class="username navButt" id="username" placeholder="username" />
+      <input class="password navButt" id="password" placeholder="password" type="password" />
+      <input onclick="auth('login')" value="Login" class="loginFormButt navButt"/>
+      <input onclick="auth('signup')" value="Sign Up" class="signupFormButt navButt"/>
+    </div>
+  </form>
+  <div id="errorField-signin"></div>
+</div>
+<style>{{ template "loginForm.css" }}</style>
+<script>{{ template "loginForm.js"}}</script>
+{{end}}

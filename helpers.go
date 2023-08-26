@@ -154,7 +154,20 @@ func exeTmpl(w http.ResponseWriter, r *http.Request, view *viewData, tmpl string
 	if view == nil {
 		view = &viewData{}
 	}
-	view.CompanyName = companyName
+
+	// Add the user data to the page if they're logged in.
+	c := r.Context().Value(ctxkey)
+	if a, ok := c.(*credentials); ok && a.IsLoggedIn {
+		view.UserData = a
+
+		err := templates.ExecuteTemplate(w, tmpl, view)
+		if err != nil {
+			fmt.Println(err)
+		}
+		return
+	}
+
+	view.UserData = &credentials{IsLoggedIn: false}
 	err := templates.ExecuteTemplate(w, tmpl, view)
 	if err != nil {
 		log.Println(err)
