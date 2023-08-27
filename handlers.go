@@ -14,7 +14,7 @@ import (
 	"github.com/redis/go-redis/v9"
 )
 
-// home is displays the main page
+// home displays the main page
 func home(w http.ResponseWriter, r *http.Request) {
 	var v viewData
 	v.Order = "chron"
