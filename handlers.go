@@ -158,7 +158,7 @@ func submitRoot(w http.ResponseWriter, r *http.Request) {
 				fileExtension = "webm"
 
 			}
-			tempFile, err := os.CreateTemp("public/temp-images", "u-*."+fileExtension)
+			tempFile, err := os.CreateTemp("public/temp", "u-*."+fileExtension)
 			if err != nil {
 				log.Println(err)
 			}
