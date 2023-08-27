@@ -7,6 +7,10 @@ expect it to be bug free.
 TagMachine is a new type of social media website that aims to accept and 
 embrace social media as a modern form of journalism. 
 
+The supposedly "stable" version can be seen at [the main site](https://tagmachine.xyz/).
+Updates to this new version can be seen at [the beta site](http://beta.tagmachine.xyz/).
+The old version can be seen at [the old site](http://old.tagmachine.xyz/).
+
 ## Features implemented so far:
  - User Authentication
  - Posts
