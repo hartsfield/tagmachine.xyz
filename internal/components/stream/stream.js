@@ -6,7 +6,7 @@ async function submitReply(postID) {
     } else if (formBody.length > 1000) {
         document.getElementById("errorField_"+postID).innerHTML = "too long";
     } else {
-        const response = await fetch("/submitForm", {
+        const response = await fetch("/submitReply", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({

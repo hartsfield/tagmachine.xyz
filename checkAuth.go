@@ -52,6 +52,6 @@ func checkAuth(next http.HandlerFunc) http.HandlerFunc {
 			next.ServeHTTP(w, r.WithContext(ctxx))
 			return
 		}
-		next.ServeHTTP(w, r.WithContext(ctx))
+		// next.ServeHTTP(w, r.WithContext(ctx))
 	})
 }

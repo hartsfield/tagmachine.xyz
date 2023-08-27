@@ -9,7 +9,7 @@ async function submitPost() {
     document.getElementById("errorField").innerHTML = "too long";
   } else {
     console.log(data);
-    let response = await fetch("/submitForm", {
+    let response = await fetch("/submitRoot", {
       method: "POST",
       body: data,
     });

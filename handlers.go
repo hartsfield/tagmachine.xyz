@@ -111,17 +111,9 @@ func viewPost(w http.ResponseWriter, r *http.Request) {
 	exeTmpl(w, r, &v, "post.tmpl")
 }
 
-// handleForm verifies a users submissions and then adds it to the database.
-func handleForm(w http.ResponseWriter, r *http.Request) {
-	// Check if the user is logged in. You can't post wothout being logged
-	c := r.Context().Value(ctxkey)
-	if a, ok := c.(*credentials); !ok || !a.IsLoggedIn {
-		ajaxResponse(w, map[string]string{
-			"success": "false",
-			"replyID": "",
-			"error":   "You must be logged in to post",
-		})
-
+// submitRoot verifies a users submissions and then adds it to the database.
+func submitRoot(w http.ResponseWriter, r *http.Request) {
+	if !isLoggedIn(w, r) {
 		return
 	}
 	mr, err := r.MultipartReader()
@@ -188,12 +180,7 @@ func handleForm(w http.ResponseWriter, r *http.Request) {
 		}
 	}
 
-	parentExists, err := rdb.Exists(rdx, parent).Result()
-	if err != nil {
-		log.Println(err)
-	}
-
-	if parentExists == 0 && parent != "root" {
+	if parent != "root" {
 		ajaxResponse(w, map[string]string{
 			"success": "false",
 			"replyID": "",
@@ -207,13 +194,14 @@ func handleForm(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	var data post
-	data.Id = genPostID(10)
-	data.TS = time.Now()
+	var data *post = &post{
+		Id:        genPostID(10),
+		TS:        time.Now(),
+		Parent:    parent,
+		BodyText:  bodyText,
+		MediaType: mediaType,
+	}
 	data.FTS = data.TS.Format("2006-01-02 03:04:05 pm")
-	data.Parent = parent
-	data.BodyText = bodyText
-	data.MediaType = mediaType
 	rdb.HSet(
 		rdx, data.Id,
 		"bodytext", bodyText,
@@ -225,19 +213,77 @@ func handleForm(w http.ResponseWriter, r *http.Request) {
 		"media", tempFileName,
 		"mediaType", mediaType,
 	)
-	if data.Parent != "root" {
-		rdb.ZAdd(rdx, parent+":CHILDREN:CHRON", redis.Z{Score: float64(time.Now().UnixMilli()), Member: data.Id})
-		rdb.ZAdd(rdx, parent+":CHILDREN:RANK", redis.Z{Score: 0, Member: data.Id})
-		bubbleUp(&data)
-	} else {
-		rdb.ZAdd(rdx, "ANON:POSTS:CHRON", redis.Z{Score: float64(time.Now().UnixMilli()), Member: data.Id})
-		rdb.ZAdd(rdx, "ANON:POSTS:RANK", redis.Z{Score: 0, Member: data.Id})
-		popLast()
-	}
+	rdb.ZAdd(rdx, "ANON:POSTS:CHRON", redis.Z{Score: float64(time.Now().UnixMilli()), Member: data.Id})
+	rdb.ZAdd(rdx, "ANON:POSTS:RANK", redis.Z{Score: 0, Member: data.Id})
+	popLast()
 	ajaxResponse(w, map[string]string{
 		"success":   "true",
 		"replyID":   data.Id,
 		"timestamp": data.FTS,
 	})
 	beginCache()
+}
+
+// submitReply verifies a users submissions and then adds it to the database.
+func submitReply(w http.ResponseWriter, r *http.Request) {
+	if !isLoggedIn(w, r) {
+		return
+	}
+	data, err := marshalPostData(r)
+	if err != nil {
+		log.Println(err)
+	}
+	parentExists, err := rdb.Exists(rdx, data.Parent).Result()
+	if err != nil {
+		log.Println(err)
+	}
+	if parentExists == 0 {
+		ajaxResponse(w, map[string]string{
+			"success":   "false",
+			"replyID":   "",
+			"timestamp": data.FTS,
+		})
+		return
+	}
+	if len(data.BodyText) < 5 || len(data.BodyText) > 1000 {
+		ajaxResponse(w, map[string]string{"success": "false"})
+		return
+	}
+	data.Id = genPostID(10)
+	data.TS = time.Now()
+	data.FTS = data.TS.Format("2006-01-02 03:04:05 pm")
+	rdb.HSet(
+		rdx, data.Id,
+		"name", data.Author,
+		"title", data.Title,
+		"bodytext", data.BodyText,
+		"id", data.Id,
+		"ts", data.TS,
+		"fts", data.FTS,
+		"parent", data.Parent,
+		"childCount", "0",
+	)
+	rdb.ZAdd(rdx, data.Parent+":CHILDREN:CHRON", redis.Z{Score: float64(time.Now().UnixMilli()), Member: data.Id})
+	rdb.ZAdd(rdx, data.Parent+":CHILDREN:RANK", redis.Z{Score: 0, Member: data.Id})
+	bubbleUp(data)
+	ajaxResponse(w, map[string]string{
+		"success":   "true",
+		"replyID":   data.Id,
+		"timestamp": data.FTS,
+	})
+	beginCache()
+}
+
+func isLoggedIn(w http.ResponseWriter, r *http.Request) bool {
+	// Check if the user is logged in. You can't post wothout being logged
+	c := r.Context().Value(ctxkey)
+	if a, ok := c.(*credentials); !ok || !a.IsLoggedIn {
+		ajaxResponse(w, map[string]string{
+			"success": "false",
+			"replyID": "",
+			"error":   "You must be logged in for that",
+		})
+		return false
+	}
+	return true
 }
