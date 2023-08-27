@@ -30,11 +30,6 @@ embrace social media as a modern form of journalism.
  - Maybe mp3 support
  - Maybe sorting algorithms
 
-# New Style
-
-![Screenshot from 2023-08-26 19-23-38](https://github.com/hartsfield/machineTag/assets/30379836/6fa734ad-2dfb-4387-8f24-d8386acec19c)
-
-
 # Requirements
 ## For Development
   - Go programming environment
@@ -50,3 +45,5 @@ Clone the repo, and run the following (assuming redis is running on the default 
     ./autoload.sh tm2 9999 [random phrase here]
 
 Now visit `http://localhost:9999`, sign-up, and add some posts.
+
+![Screenshot from 2023-08-26 19-23-38](https://github.com/hartsfield/machineTag/assets/30379836/6fa734ad-2dfb-4387-8f24-d8386acec19c)
