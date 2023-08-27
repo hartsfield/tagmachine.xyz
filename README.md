@@ -37,13 +37,13 @@ SLOC = 1601 as of this commit
  - Maybe mp3 support
  - Maybe sorting algorithms
 
-# Requirements
-## For Development
+# Development
+## Requirements
   - Go programming environment
   - Redis (v7+)
   - Only tested on Linux (Debian & RedHat based)
 
-# Instructions for running
+## Instructions for running
 
 Clone the repo, and run the following (assuming redis is running on the default port):
 
@@ -53,7 +53,7 @@ Clone the repo, and run the following (assuming redis is running on the default 
 
 Now visit `http://localhost:9999`, sign-up, and add some posts.
 
-# Bolt Architecture
+## Bolt Architecture
 
 An explanation of what Bolt architecture is can be found in [the git repository for the Bolt software](https://github.com/hartsfield/bolt)
 
