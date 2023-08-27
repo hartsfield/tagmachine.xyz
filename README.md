@@ -15,6 +15,8 @@ embrace social media as a modern form of journalism.
  - Two sorted views (ranked/new)
  - Pagification
 
+SLOC = 1601 as of this commit
+
 ## Features implemented in the old version that need to be ported:
  - Tagging
  - Filter by tag
