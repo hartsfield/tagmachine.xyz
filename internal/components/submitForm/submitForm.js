@@ -8,6 +8,7 @@ async function submitPost() {
   } else if (bodyText.length > 1000) {
     document.getElementById("errorField").innerHTML = "too long";
   } else {
+    console.log(data);
     let response = await fetch("/submitForm", {
       method: "POST",
       body: data,
@@ -20,7 +21,6 @@ async function submitPost() {
     } else {
       document.getElementById("errorField").innerHTML = res.error;
     }
-
   }
 }
 {{end}}

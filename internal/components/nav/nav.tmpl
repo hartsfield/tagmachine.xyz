@@ -12,9 +12,10 @@
         <div class="navButt newest" onclick="getStream('newest')">New</div>
         {{end}}
     </div>
+    <div class="newPost navButt" onclick="togglePostForm()" id="newPostButt">+</div>
     {{if .UserData.IsLoggedIn }}
     <div class="newPost navButt" onclick="togglePostForm()" id="newPostButt">+</div>
-      <input onclick="auth('logout')" value="logout" class="signupFormButt navButt"/>
+    <input onclick="auth('logout')" value="logout" class="signupFormButt navButt"/>
     {{else}}
     <div class="loginButt navButt" onclick="toggleLoginForm()" id="showLoginButt">Login</div>
     {{end}}

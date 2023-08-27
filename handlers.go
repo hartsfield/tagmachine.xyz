@@ -25,6 +25,9 @@ func home(w http.ResponseWriter, r *http.Request) {
 	}
 	exeTmpl(w, r, &v, "main.tmpl")
 }
+
+// pageInOrder gets a page from the db passed to it. This is the code for
+// pagification.
 func pageInOrder(db []*post, r *http.Request, count int, v *viewData) map[string]string {
 	var bb bytes.Buffer
 	var nextCount string
@@ -88,53 +91,7 @@ func getByRanked(w http.ResponseWriter, r *http.Request) {
 			v.Stream = postDBRank[:count]
 		}
 		exeTmpl(w, r, &v, "main.tmpl")
-		// v.Stream = postDBRank[count+(len(postDBRank)-count):]
-		// exeTmpl(w, r, &v, "main.tmpl")
 	}
-	// var v viewData
-	// v.Order = "ranked"
-	// var count int = 20
-	// if len(strings.Split(r.RequestURI, "?")) > 1 {
-	// 	params, err := url.ParseQuery(strings.Split(r.RequestURI, "?")[1])
-	// 	if err != nil {
-	// 		log.Println(err)
-	// 	}
-	// 	if params["count"] == nil {
-	// 		params["count"] = append(params["count"], "0")
-	// 	}
-	// 	if params["count"][0] != "None" {
-	// 		count, err = strconv.Atoi(params["count"][0])
-	// 		if err != nil {
-	// 			log.Println(err)
-	// 		}
-
-	// 		var nextCount string
-	// 		if len(postDBRank) < count {
-	// 			v.Stream = postDBRank[count+(len(postDBRank)-count):]
-	// 			nextCount = "None"
-	// 		} else {
-	// 			v.Stream = postDBRank[count+1 : count+20]
-	// 			nextCount = strconv.Itoa(count + 20)
-	// 		}
-	// 		var bb bytes.Buffer
-	// 		err = templates.ExecuteTemplate(&bb, "stream.tmpl", v)
-	// 		if err != nil {
-	// 			log.Println(err)
-	// 		}
-	// 		ajaxResponse(w, map[string]string{
-	// 			"success":  "true",
-	// 			"template": bb.String(),
-	// 			"count":    nextCount,
-	// 		})
-	// 	}
-	// } else {
-	// 	if len(postDBRank) < count {
-	// 		v.Stream = postDBRank[:]
-	// 	} else {
-	// 		v.Stream = postDBRank[:count]
-	// 	}
-	// 	exeTmpl(w, r, &v, "main.tmpl")
-	// }
 }
 
 // viewPost returns a single post, with replies.
@@ -154,12 +111,19 @@ func viewPost(w http.ResponseWriter, r *http.Request) {
 	exeTmpl(w, r, &v, "post.tmpl")
 }
 
-func syncApk(apkFile *os.File) {
-
-}
-
 // handleForm verifies a users submissions and then adds it to the database.
 func handleForm(w http.ResponseWriter, r *http.Request) {
+	// Check if the user is logged in. You can't post wothout being logged
+	c := r.Context().Value(ctxkey)
+	if a, ok := c.(*credentials); !ok || !a.IsLoggedIn {
+		ajaxResponse(w, map[string]string{
+			"success": "false",
+			"replyID": "",
+			"error":   "You must be logged in to post",
+		})
+
+		return
+	}
 	mr, err := r.MultipartReader()
 	if err != nil {
 		log.Println(err)
@@ -215,6 +179,7 @@ func handleForm(w http.ResponseWriter, r *http.Request) {
 			buf := new(bytes.Buffer)
 			buf.ReadFrom(part)
 			bodyText = buf.String()
+			log.Println("bt:", bodyText)
 		}
 		if part.FormName() == "parent" {
 			buf := new(bytes.Buffer)
@@ -232,6 +197,7 @@ func handleForm(w http.ResponseWriter, r *http.Request) {
 		ajaxResponse(w, map[string]string{
 			"success": "false",
 			"replyID": "",
+			"error":   "thread no longer exists",
 		})
 		return
 	}

@@ -2,7 +2,7 @@ package main
 
 import "net/http"
 
-// registerRoutes registers the routes with the provided *http.ServeMuc
+// registerRoutes registers the routes with the provided *http.ServeMux
 func registerRoutes(mux *http.ServeMux) {
 	mux.HandleFunc("/", checkAuth(home))
 	mux.HandleFunc("/ranked", checkAuth(getByRanked))

@@ -1,7 +1,6 @@
 {{ define "submitForm.tmpl" }}
 <div class="section-outer submitForm-outer section-submitForm" id="section-submitForm">
   <form class="mainForm" id="fileUploadForm" enctype="multipart/form-data">
-    <!-- <form class="mainForm" id="fileUploadForm" enctype="multipart/form-data" action="/submitForm" method="post"> -->
     <textarea class="body" id="bodyText" placeholder="post something . . ." name="myText"></textarea>
     <div class="formButtons">
       <label for="file-upload" class="uploadButt navButt">
@@ -11,8 +10,8 @@
       <input onclick="submitPost()" value="Post" class="postSubmitButt navButt"/>
     </div>
     <input type="hidden" class="hiddenParent" name="parent" value="root"/>
-    </form>
-      <div id="errorField"></div>
+  </form>
+  <div id="errorField"></div>
 </div>
 <style>{{ template "submitForm.css" }}</style>
 <script>{{ template "submitForm.js"}}</script>
