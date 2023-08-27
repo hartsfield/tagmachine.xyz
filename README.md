@@ -36,7 +36,7 @@ SLOC = 1601 as of this commit
 ## For Development
   - Go programming environment
   - Redis (v7+)
-  - Only tested on Linux
+  - Only tested on Linux (Debian & RedHat based)
 
 # Instructions
 
