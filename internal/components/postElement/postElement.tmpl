@@ -3,7 +3,7 @@
     <div class="post" id="post_{{.Id}}">
         {{ if eq .MediaType "image" }}
         <div class="post-media-outer" onclick="window.location = window.location.origin + '/post/{{ .Id }}'"><img class="post-media" src="{{.Media}}" /></div>
-        {{ else }}
+        {{ else if eq .MediaType "video" }}
         <div class="post-media-outer" onclick="window.location = window.location.origin + '/post/{{ .Id }}'"><video autoplay loop muted class="post-media" src="/{{.Media}}" ></video></div>
         {{end}}
         <div class="postBottom">
@@ -26,10 +26,11 @@
     <div class="post" id="post_{{.Id}}">
         {{ if eq .MediaType "image" }}
         <div class="post-media-outer"><img class="post-media" src="/{{.Media}}" /></div>
-        {{ else }}
+        {{ else if eq .MediaType "video" }}
         <div class="post-media-outer"><video autoplay loop muted class="post-media" src="/{{.Media}}" ></video></div>
+        {{ else }}
         {{end}}
-        <div class="postBottom">
+        <div class="postBottom postBottomReply">
         <div class="timestamp-outer">
             <div class="timestamp">{{ .FTS }}</div>
         </div>
@@ -37,7 +38,7 @@
             <div class="bodytext">{{ .BodyText }}</div>
         </div>
         {{ template "postHead.tmpl" . }}
-        <div class="reply-form" id="reply-form_{{.Id}}">
+        <div class="reply-form reply-form-child" id="reply-form_{{.Id}}">
             <form class="mainForm">
                 <textarea class="postBody" id="body_{{.Id}}" placeholder="post something..."></textarea>
             </form>

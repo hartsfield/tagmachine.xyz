@@ -1,16 +1,12 @@
 {{ define "loginForm.js" }}
 function toggleLoginForm() {
-    let pf = document.getElementById("section-submitForm").style.display;
+    let pf = document.getElementById("section-loginForm").style.display;
     if (pf != "block") {
         document.getElementById("section-loginForm").style.display = "block";
-        document.getElementById("showLoginButt").innerHTML = "-";
-        document.getElementById("showLoginButt").style.background = "#8d561f";
-        document.getElementById("showLoginButt").style.border = "1px solid #6b3000";
+        document.getElementById("showLoginButt").innerHTML = "X";
     } else {
-        document.getElementById("section-loginForm").style.display = "none";
         document.getElementById("showLoginButt").innerHTML = "Login";
-        document.getElementById("showLoginButt").style.background = "darkred";
-        document.getElementById("showLoginButt").style.border = "1px solid red";
+        document.getElementById("section-loginForm").style.display = "none";
     }
 
 }
@@ -28,7 +24,7 @@ function auth(path) {
             var res = JSON.parse(xhr.responseText);
             if (res.success == "false") {
                 // If we aren't successful we display an error.
-                document.getElementById("errorField").innerHTML = res.error;
+                document.getElementById("errorField-signin").innerHTML = res.error;
             } else {
                 // Reload the page now that the user is signed in.
                 window.location.reload();

@@ -18,9 +18,26 @@
     text-align: center;
 }
 .loginFormButt {
-    background-color: lightgreen;
+    background-color: #b883ca;
+    border: 1px solid purple;
+    color: #ffdcff;
 }
 .signupFormButt {
-    background-color: lightblue;
+    background-color: #90ceb2;
+    border: 1px solid #1c9559;
+    color: #d4ffea;
+}
+#errorField-signin {
+    color: #9f4f04;
+    margin-top: 0.5em;
+    font-weight: bold;
+    text-align: center;
+    background: #d68f005c;
+    font-size: 0.9em;
+    border-radius: 0.3em;
+    padding: 0.2em;
+    padding-bottom: 0.3em;
+    box-shadow: 5px 5px 0px;
+    border: 1px solid #deb85f;
 }
 {{end}}

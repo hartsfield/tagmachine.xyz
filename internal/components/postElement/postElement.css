@@ -2,15 +2,18 @@
 .post-media {
   width: 100%;
   border-radius: 0.4em;
-    cursor: pointer;
-border: 1px solid #ffc884;
+  cursor: pointer;
+  border: 1px solid #ffc884;
 }
 .post-media-outer {
-    padding: 0.5em;
-    padding-bottom: 0em;
+  padding: 0.5em;
+  padding-bottom: 0em;
 }
 .postBottom {
   padding: 0.5em;
+}
+.postBottomReply {
+  padding-right: 0;
 }
 .postBody {
   width: 100%;
@@ -25,6 +28,12 @@ border: 1px solid #ffc884;
   margin: 1em 0;
   padding-right: 1em;
 }
+.reply-form-child {
+  padding-right: 0.5em;
+}
+.show-reply {
+  margin-right: 1em;
+}
 .submitButt {
   background-color: #8d561f;
   text-align: center;
@@ -32,6 +41,6 @@ border: 1px solid #ffc884;
   padding: 0.5em 0 0.7em 0;
   margin: 1em 0;
   border-radius: 0.3em;
-    color: #ffe4a8;
+  color: #ffe4a8;
 }
 {{end}}

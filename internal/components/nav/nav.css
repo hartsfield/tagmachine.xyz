@@ -14,9 +14,9 @@
     animation: 500ms linear scalin;
 }
 .loginButt {
-    background-color: darkred;
+    background-color: #8d561f;
     color: cornsilk;
-    
+    border: "1px solid #6b3000";
 }
 .homeButt {
     /* background-color: #913200; */

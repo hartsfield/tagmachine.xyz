@@ -252,6 +252,7 @@ func submitReply(w http.ResponseWriter, r *http.Request) {
 	data.Id = genPostID(10)
 	data.TS = time.Now()
 	data.FTS = data.TS.Format("2006-01-02 03:04:05 pm")
+	data.MediaType = "none"
 	rdb.HSet(
 		rdx, data.Id,
 		"name", data.Author,
@@ -262,6 +263,7 @@ func submitReply(w http.ResponseWriter, r *http.Request) {
 		"fts", data.FTS,
 		"parent", data.Parent,
 		"childCount", "0",
+		"mediaType", "none",
 	)
 	rdb.ZAdd(rdx, data.Parent+":CHILDREN:CHRON", redis.Z{Score: float64(time.Now().UnixMilli()), Member: data.Id})
 	rdb.ZAdd(rdx, data.Parent+":CHILDREN:RANK", redis.Z{Score: 0, Member: data.Id})
