@@ -43,7 +43,7 @@ SLOC = 1601 as of this commit
   - Redis (v7+)
   - Only tested on Linux (Debian & RedHat based)
 
-# Instructions
+# Instructions for running
 
 Clone the repo, and run the following (assuming redis is running on the default port):
 
@@ -52,5 +52,22 @@ Clone the repo, and run the following (assuming redis is running on the default 
     ./autoload.sh tm2 9999 [random phrase here]
 
 Now visit `http://localhost:9999`, sign-up, and add some posts.
+
+# Bolt Architecture
+
+An explanation of what Bolt architecture is can be found in [the git repository for the Bolt software](https://github.com/hartsfield/bolt)
+
+Basically the front end is built using components composed of regular 
+HTML/css/JavaScript, but they're executed via Go html templating, so Go 
+template directives can be used. 
+
+These components are mostly self-contained in directories located in `internal/components`.
+
+Once created, these components can be added to a `page` located in 
+`internal/pages`, or they can be used as a sub-component in another component.
+
+Routes are registered in `routed.go`
+
+View/Model structs are located in `viewdata.go`
 
 ![Screenshot from 2023-08-26 19-23-38](https://github.com/hartsfield/machineTag/assets/30379836/6fa734ad-2dfb-4387-8f24-d8386acec19c)
