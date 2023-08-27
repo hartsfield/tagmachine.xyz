@@ -64,7 +64,7 @@ template directives can be used.
  - These components are mostly self-contained in directories located in `internal/components`.
  - Once created, these components can be added to a `page` located in 
 `internal/pages`, or they can be used as a sub-component in another component.
- - Routes are registered in `routed.go`
+ - Routes are registered in `routes.go`
  - View/Model structs are located in `viewdata.go`
 
 ![Screenshot from 2023-08-26 19-23-38](https://github.com/hartsfield/machineTag/assets/30379836/6fa734ad-2dfb-4387-8f24-d8386acec19c)
