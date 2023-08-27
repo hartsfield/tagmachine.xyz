@@ -6,6 +6,30 @@ expect it to be bug free.
 TagMachine is a new type of social media website that aims to accept and 
 embrace social media as a modern form of journalism. 
 
+## Features implemented so far:
+ - User Authentication
+ - Posts
+ - Replies
+ - Webm/mp4/jpeg/png/gif upload support
+ - Ranked posts
+ - Two sorted views (ranked/new)
+ - Pagification
+
+## Features implemented in the old version that need to be ported:
+ - Tagging
+ - Filter by tag
+ - Mentions
+ - Follow user
+ - User pages
+     - following stream
+     - suggestions
+
+## Features coming soon:
+ - User favorites
+ - Maybe votes
+ - Maybe mp3 support
+ - Maybe sorting algorithms
+
 To run this program: 
 
 # New Style
