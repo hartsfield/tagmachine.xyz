@@ -30,8 +30,6 @@ embrace social media as a modern form of journalism.
  - Maybe mp3 support
  - Maybe sorting algorithms
 
-To run this program: 
-
 # New Style
 
 ![Screenshot from 2023-08-26 19-23-38](https://github.com/hartsfield/machineTag/assets/30379836/6fa734ad-2dfb-4387-8f24-d8386acec19c)
