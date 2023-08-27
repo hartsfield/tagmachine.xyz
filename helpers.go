@@ -15,10 +15,10 @@ import (
 // lastCached is how many milliseconds ago the database was last cached
 var lastCached time.Time
 
-// beginCache will cache the database no more than every 3 seconds. This
+// beginCache will cache the database no more than every [x] seconds. This
 // function is run on startup, and when a post or reply is added to the
 // database. In the event that many posts are being posted at once, the
-// function is designed to only rebuild the cache every 3 seconds. This could
+// function is designed to only rebuild the cache every [x] seconds. This could
 // be adjusted if needed.
 func beginCache() {
 	if time.Now().Sub(lastCached).Milliseconds() > 500 {
@@ -29,7 +29,7 @@ func beginCache() {
 		// If we didn't have this delay, the User_2's post would not
 		// get cached, because the rebuild triggered by User_1 would
 		// have already started.
-		// By delaying the rebuild for 3 seconds we ensure all posts
+		// By delaying the rebuild for [x] seconds we ensure all posts
 		// are cached, even those that don't trigger a re-cache
 		// automatically.
 		// This function is non-blocking (is executed in a goroutine)
