@@ -54,7 +54,6 @@ func parseToken(tokenString string) (*credentials, error) {
 		cc := credentials{IsLoggedIn: false}
 		return &cc, err
 	}
-
 	if claims, ok := token.Claims.(*credentials); ok && token.Valid {
 		return claims, nil
 	}

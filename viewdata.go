@@ -28,7 +28,7 @@ type post struct {
 	// formatted time stamp
 	FTS      string `json:"fts" redis:"fts"`
 	BodyText string `json:"bodytext" redis:"bodytext"`
-	// TODO: implment nonce
+	// TODO: implement nonce
 	Nonce      string  `json:"nonce" redis:"nonce"`
 	Children   []*post `json:"children" redis:"children"`
 	ChildCount int     `json:"childCount" redis:"childCount"`
