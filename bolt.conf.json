@@ -1,3 +1,22 @@
 {
-    "appName":"template"
+    "app": {
+        "name": "TagMachine",
+        "command": "tagmachine",
+        "domain_name": "tagmachine.xyz",
+        "port": "9002",
+        "tls_enabled": true,
+        "alertsOn": true,
+        "env": {"logFilePath": "./log.txt"},
+        "version": "0.1",
+        "repo": "https://github.com/hartsfield/machinetag"
+    },
+    "gcloud": {
+        "command": "gcloud",
+        "zone": "us-central1-a",
+        "project": "mysterygift",
+        "proxy_home": "/home/john/bp/",
+        "livedir": "/home/john/live/",
+        "user": "john",
+        "instance": "main"
+    }
 }
