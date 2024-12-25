@@ -6,6 +6,7 @@ import (
 	"log"
 	"math/rand"
 	"net/http"
+	"os"
 	"strconv"
 	"time"
 
@@ -212,4 +213,17 @@ func marshalPostData(r *http.Request) (*post, error) {
 		return t, err
 	}
 	return t, nil
+}
+
+func readConf() *config {
+	b, err := os.ReadFile("./bolt.conf.json")
+	if err != nil {
+		log.Println(err)
+	}
+	c := config{}
+	err = json.Unmarshal(b, &c)
+	if err != nil {
+		log.Println(err)
+	}
+	return &c
 }

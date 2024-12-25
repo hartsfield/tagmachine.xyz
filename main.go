@@ -3,15 +3,12 @@ package main
 import (
 	"fmt"
 	"log"
-	"math/rand"
-	"time"
 )
 
 // init sets up formatting for logging, and seeds math/rand for generating post
 // IDs
 func init() {
 	log.SetFlags(log.LstdFlags | log.Lshortfile)
-	rand.Seed(time.Now().UTC().UnixNano())
 }
 
 func main() {
