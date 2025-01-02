@@ -5,12 +5,12 @@
     {{template "banner.tmpl" . }}
     {{template "nav.tmpl" . }}
     {{template "submitForm.tmpl" . }}
-    {{template "stream.tmpl" . }}
-    {{template "nextPage.tmpl" . }}
     {{ if .UserData.IsLoggedIn }}
     <input onclick="auth('logout')" value="logout" class="signupFormButt navButt"/>
     {{ else }}
     {{template "loginForm.tmpl" . }}
     {{end}}
+    {{template "stream.tmpl" . }}
+    {{template "nextPage.tmpl" . }}
   </body>
 </html>
