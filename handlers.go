@@ -204,14 +204,14 @@ func submitRoot(w http.ResponseWriter, r *http.Request) {
 	data.FTS = data.TS.Format("2006-01-02 03:04:05 pm")
 	rdb.HSet(
 		rdx, data.Id,
-		"bodytext", bodyText,
+		"bodytext", data.BodyText,
 		"id", data.Id,
 		"ts", data.TS,
 		"fts", data.FTS,
-		"parent", parent,
+		"parent", data.Parent,
 		"childCount", "0",
 		"media", tempFileName,
-		"mediaType", mediaType,
+		"mediaType", data.MediaType,
 	)
 	rdb.ZAdd(rdx, "ANON:POSTS:CHRON", redis.Z{Score: float64(time.Now().UnixMilli()), Member: data.Id})
 	rdb.ZAdd(rdx, "ANON:POSTS:RANK", redis.Z{Score: 0, Member: data.Id})
