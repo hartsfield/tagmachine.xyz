@@ -129,7 +129,7 @@ func submitRoot(w http.ResponseWriter, r *http.Request) {
 		if err_part == io.EOF {
 			break
 		}
-		if part.FormName() == "myFile" {
+		if part.FormName() == "media" {
 			fileBytes, err := io.ReadAll(io.LimitReader(part, 10<<20))
 			if err != nil {
 				log.Println(err)
