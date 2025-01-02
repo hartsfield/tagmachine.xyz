@@ -46,6 +46,7 @@ func newClaims(w http.ResponseWriter, r *http.Request, c *credentials) (ctxx con
 // set of credentials. If the token is invalid it returns an error
 func parseToken(tokenString string) (*credentials, error) {
 	var claims *credentials
+	log.Println(tokenString)
 	token, err := jwt.ParseWithClaims(tokenString, &credentials{}, func(token *jwt.Token) (interface{}, error) {
 		return hmacSampleSecret, nil
 	})
