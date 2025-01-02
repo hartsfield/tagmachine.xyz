@@ -221,6 +221,7 @@ func submitRoot(w http.ResponseWriter, r *http.Request) {
 		"replyID":   data.Id,
 		"timestamp": data.FTS,
 	})
+	log.Println(" test")
 	beginCache()
 }
 
