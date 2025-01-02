@@ -6,7 +6,7 @@
         "port": "9002",
         "tls_enabled": true,
         "alertsOn": true,
-        "env": {"logFilePath": "..log.txt"},
+        "env": {"logFilePath": "log.txt"},
         "version": "0.1",
         "repo": "https://github.com/hartsfield/tagmachine.xyz"
     },
