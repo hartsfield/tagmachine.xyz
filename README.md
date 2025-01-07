@@ -28,10 +28,12 @@ minimum requirements:
     # Hierarchic explanations
     <tagmachine.xyz/
 
-          ▾ internal/         # The files contained in internal/* are "templates"
+          ▾ internal/         # The files contained in internal/* are "templates", which could be either "components" or "pages"
             ▸ components/     # where the components live
             ▸ pages/          # where the pages live
             ▸ shared/         # where we keeps shared resources, which can be accessed by all pages and components
+                              # NOTE: Components can be made up of smaller components, or added to a page, but a page is never "added" to
+                              # a component, or another page
 
           ▸ public/           # public files, where we store/save images
 
