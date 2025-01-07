@@ -28,13 +28,7 @@ func home(w http.ResponseWriter, r *http.Request) {
 
 func ruleHandler(w http.ResponseWriter, r *http.Request) {
 	var v viewData
-	v.Order = "chron"
-	if len(postDBChron) < 20 {
-		v.Stream = postDBChron[:]
-	} else {
-		v.Stream = postDBChron[:20]
-	}
-	exeTmpl(w, r, &v, "main.tmpl")
+	exeTmpl(w, r, &v, "rules.html")
 }
 
 // pageInOrder gets a page from the db passed to it. This is the code for
