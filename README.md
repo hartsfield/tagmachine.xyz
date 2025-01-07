@@ -37,10 +37,10 @@ minimum requirements:
 
           ▸ public/           # public files, where we store/save images
 
-          authHelpers.go
-          checkAuth.go
-          globals.go
-          handlers.go
+          authHelpers.go      # the rest should be *fairly* self explanatory
+          checkAuth.go        # FYI: 1075 lines of Go code, and about as much 
+          globals.go          # html/css/js in the templates.
+          handlers.go         # The entire app is only about 2000 lines of sourcecode (maybe)
           helpers.go
           main.go
           router.go

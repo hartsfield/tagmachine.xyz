@@ -6,3 +6,4 @@
 2025/01/07 15:06:03 main.go:26: Server started @ http://localhost:9002
 2025/01/07 15:10:04 main.go:26: Server started @ http://localhost:9002
 2025/01/07 15:10:07 checkAuth.go:23: http: named cookie not present
+2025/01/07 15:12:56 main.go:26: Server started @ http://localhost:9002
