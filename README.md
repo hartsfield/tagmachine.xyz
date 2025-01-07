@@ -35,7 +35,7 @@ minimum requirements:
                               # NOTE: Components can be made up of smaller components, or added to a page, but a page is never "added" to
                               # a component, or another page
 
-          ▸ public/           # public files, where we store/save images
+          ▸ public/           # public files, where we store/save media
 
           authHelpers.go      # the rest should be *fairly* self explanatory
           checkAuth.go        # FYI: 1075 lines of Go code, and about as much 
