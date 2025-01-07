@@ -1,5 +1,5 @@
 ![Untitled drawing (7)](https://github.com/hartsfield/machineTag/assets/30379836/87bfbd09-ed33-4584-8ca9-d1a7034ee9ab)
-# MachineTag is a re-write of TagMachine
+# This is a re-write of TagMachine (hartsfield?tagmachine)
 
 NOTE: This program is still in alpha stages and is extremely unstable. Don't 
 expect it to be bug free. 
