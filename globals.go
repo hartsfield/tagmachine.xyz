@@ -15,10 +15,25 @@ type ckey int
 const ctxkey ckey = iota
 
 var (
-	appConf     *config = readConf()
-	servicePort         = ":" + appConf.App.Port
-	logFilePath         = appConf.App.Env["logFilePath"]
-	AppName     string  = appConf.App.Name
+	appConf          *config            = readConf()
+	servicePort                         = ":" + appConf.App.Port
+	logFilePath                         = appConf.App.Env["logFilePath"]
+	AppName          string             = appConf.App.Name
+	hmacSampleSecret                    = []byte(os.Getenv("hmacss"))
+	templates        *template.Template = template.New("main")
+	// connect to redis
+	redisIP = os.Getenv("redisIP")
+	rdb     = redis.NewClient(&redis.Options{
+		Addr:     redisIP + ":6379",
+		Password: "",
+		DB:       2,
+	})
+	// redis context
+	rdx = context.Background()
+
+	// Database caches
+	postDBChron []*post
+	postDBRank  []*post
 )
 
 type env map[string]string
@@ -47,21 +62,3 @@ type gcloud struct {
 	LiveDir   string `json:"livedir"`
 	ProxyConf string `json:"proxyConf"`
 }
-
-var (
-	hmacSampleSecret                    = []byte(os.Getenv("hmacss"))
-	templates        *template.Template = template.New("main")
-	// connect to redis
-	redisIP = os.Getenv("redisIP")
-	rdb     = redis.NewClient(&redis.Options{
-		Addr:     redisIP + ":6379",
-		Password: "",
-		DB:       2,
-	})
-	// redis context
-	rdx = context.Background()
-
-	// Database caches
-	postDBChron []*post
-	postDBRank  []*post
-)
