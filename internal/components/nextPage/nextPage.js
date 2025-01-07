@@ -1,4 +1,3 @@
-{{ define "nextPage.js" }}
 let nextpagerButt = document.getElementById("nextPage");
 
 let requestMade = false;
@@ -40,4 +39,3 @@ async function submitNext() {
         }
     }
 }
-{{end}}

@@ -1,4 +1,3 @@
-{{ define "loginForm.js" }}
 function toggleLoginForm() {
     let pf = document.getElementById("section-loginForm").style.display;
     if (pf != "block") {
@@ -39,6 +38,3 @@ function auth(path) {
         username: document.getElementById("username").value,
     }));
 }
-
-
-{{end}}

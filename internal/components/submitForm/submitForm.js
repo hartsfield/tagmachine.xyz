@@ -1,4 +1,3 @@
-{{ define "submitForm.js" }}
 async function submitPost() {
   const form = document.getElementById("fileUploadForm");
   const data = new FormData(form);
@@ -23,4 +22,3 @@ async function submitPost() {
     }
   }
 }
-{{end}}

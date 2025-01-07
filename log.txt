@@ -1,0 +1,8 @@
+2025/01/07 15:03:47 main.go:26: Server started @ http://localhost:9002
+2025/01/07 15:03:54 checkAuth.go:23: http: named cookie not present
+2025/01/07 15:03:58 checkAuth.go:23: http: named cookie not present
+2025/01/07 15:04:44 main.go:26: Server started @ http://localhost:9002
+2025/01/07 15:04:48 checkAuth.go:23: http: named cookie not present
+2025/01/07 15:06:03 main.go:26: Server started @ http://localhost:9002
+2025/01/07 15:10:04 main.go:26: Server started @ http://localhost:9002
+2025/01/07 15:10:07 checkAuth.go:23: http: named cookie not present

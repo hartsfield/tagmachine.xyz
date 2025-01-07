@@ -1,4 +1,3 @@
-{{ define "stream.css" }}
 .post {
     /* border: 1px solid #7dae93; */
     font-weight: 400;
@@ -40,4 +39,3 @@
     color: #a65000;
     font-family: monospace;
 }
-{{end}}

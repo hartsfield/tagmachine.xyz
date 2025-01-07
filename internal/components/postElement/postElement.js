@@ -1,4 +1,3 @@
-{{ define "postElement.js" }}
 function collapsePost(postID) {
     if (document.getElementById("collapsable_" + postID).style.display == "block") {
         document.getElementById("collapseButt_" + postID).innerHTML = "[+]";
@@ -8,4 +7,3 @@ function collapsePost(postID) {
         document.getElementById("collapsable_" + postID).style.display = "block";
     }
 }
-{{end}}

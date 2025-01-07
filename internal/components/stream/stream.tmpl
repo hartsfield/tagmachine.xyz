@@ -1,4 +1,3 @@
-{{ define "stream.tmpl" }}
 <div class="section-outer stream-outer section-stream" id="section-stream">
     <div id="postsWrapper">
         {{ range $key, $value :=  .Stream }}
@@ -12,4 +11,3 @@
 </div>
 <style>{{ template "stream.css" . }}</style>
 <script>{{ template "stream.js"}}</script>
-{{end}}

@@ -1,4 +1,3 @@
-{{ define "nav.js" }}
 function togglePostForm() {
     let pf = document.getElementById("section-submitForm").style.display;
     if (pf != "block") {
@@ -17,5 +16,3 @@ function togglePostForm() {
 function getStream(sortOrder) {
     window.location = window.location.origin + "/" + sortOrder;
 }
-
-{{end}}

@@ -1,4 +1,3 @@
-{{ define "stream.js" }}
 async function submitReply(postID) {
     let formBody = document.getElementById("body_"+postID).value;
     if (formBody.length < 5) {
@@ -43,4 +42,3 @@ function isElementInViewport (el) {
         rect.right <= (window.innerWidth || document.documentElement.clientWidth)
     );
 }
-{{end}}

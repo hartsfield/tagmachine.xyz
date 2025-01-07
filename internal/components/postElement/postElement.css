@@ -1,4 +1,3 @@
-{{ define "postElement.css" }}
 .post-media {
   width: 100%;
   border-radius: 0.4em;
@@ -43,4 +42,3 @@
   border-radius: 0.3em;
   color: #ffe4a8;
 }
-{{end}}

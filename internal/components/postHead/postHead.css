@@ -1,4 +1,3 @@
-{{ define "postHead.css" }}
 .postID {
     cursor: pointer;
 }
@@ -51,4 +50,3 @@
     display: inline;
     color: #709624;
 }
-{{end}}
