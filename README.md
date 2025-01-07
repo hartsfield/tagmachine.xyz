@@ -2,6 +2,29 @@
 
 # https://TagMachine.xyz/
 
+minimum requirements:
+
+
+    # Install these (using homebrew on a mac)
+    git   # the git program
+    gh    # the github command line app
+    redis # database software for tagmachine
+    
+    # Install Go
+    https://go.dev/doc/install
+    
+    # Download and run tagmachine
+    cd                                                        
+    git clone https://github.com/hartsfield/tagmachine.xyz
+    cd tagmachine.xyz
+    ./autoload.sh tagmachine.xyz 9002 SECRET_PHRASE_HERE
+    
+    # you should be presented with the address the app is running on like:
+    > > > > http://localhost:9002/
+    
+    # Start Redis
+    idk how on a mac actually, it usually just starts itself
+
 # This is a re-write of TagMachine (https://github.com/hartsfield/tagmachine)
 
 NOTE: This program is still in alpha phases and is extremely unstable. Don't 
