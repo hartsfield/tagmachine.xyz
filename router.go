@@ -13,4 +13,5 @@ func registerRoutes(mux *http.ServeMux) {
 	mux.HandleFunc("/login", signin)
 	mux.HandleFunc("/signup", signup)
 	mux.HandleFunc("/logout", logout)
+	mux.HandleFunc("/rules", ruleHandler)
 }
