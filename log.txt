@@ -1,0 +1,57 @@
+2025/01/06 21:07:01 main.go:26: Server started @ http://localhost:9002
+2025/01/06 21:07:10 checkAuth.go:23: http: named cookie not present
+2025/01/06 21:07:15 authHelpers.go:49: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InJlbWVtYmVybWUzIiwicGFzc3dvcmQiOiIiLCJpc0xvZ2dlZEluIjp0cnVlLCJwb3N0cyI6W10sInNjb3JlIjowfQ.0u3y12igshEpMRnvwehkKTKaizpbxr3lfwPJKM4DJ3w
+2025/01/06 21:07:23 authHelpers.go:49: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InJlbWVtYmVybWUzIiwicGFzc3dvcmQiOiIiLCJpc0xvZ2dlZEluIjp0cnVlLCJwb3N0cyI6W10sInNjb3JlIjowfQ.0u3y12igshEpMRnvwehkKTKaizpbxr3lfwPJKM4DJ3w
+2025/01/06 21:07:23 handlers.go:174: bt: feciojfecoij
+2025/01/06 21:07:23 handlers.go:163: open public/temp/u-853146572.png: no such file or directory
+2025/01/06 21:07:23 server.go:3489: http: panic serving [::1]:54461: runtime error: invalid memory address or nil pointer dereference
+goroutine 38 [running]:
+net/http.(*conn).serve.func1()
+	/usr/local/go/src/net/http/server.go:1947 +0xb0
+panic({0x1024ee000?, 0x10282cc60?})
+	/usr/local/go/src/runtime/panic.go:785 +0x124
+os.(*File).Name(...)
+	/usr/local/go/src/os/file.go:62
+main.submitRoot({0x10256b1e8, 0x1400016e620}, 0x1400011af00)
+	/Users/john/programs/recent/tagmachine.xyz/handlers.go:166 +0x5bc
+net/http.HandlerFunc.ServeHTTP(0x1400011ac80?, {0x10256b1e8?, 0x1400016e620?}, 0x140001d9400?)
+	/usr/local/go/src/net/http/server.go:2220 +0x38
+main.registerRoutes.checkAuth.func5({0x10256b1e8, 0x1400016e620}, 0x1400011ac80)
+	/Users/john/programs/recent/tagmachine.xyz/checkAuth.go:52 +0x25c
+net/http.HandlerFunc.ServeHTTP(0x1400016e338?, {0x10256b1e8?, 0x1400016e620?}, 0x140000eab10?)
+	/usr/local/go/src/net/http/server.go:2220 +0x38
+net/http.(*ServeMux).ServeHTTP(0x10?, {0x10256b1e8, 0x1400016e620}, 0x1400011ac80)
+	/usr/local/go/src/net/http/server.go:2747 +0x1b4
+net/http.serverHandler.ServeHTTP({0x102569c50?}, {0x10256b1e8?, 0x1400016e620?}, 0x6?)
+	/usr/local/go/src/net/http/server.go:3210 +0xbc
+net/http.(*conn).serve(0x1400017c6c0, {0x10256b8e8, 0x1400007e210})
+	/usr/local/go/src/net/http/server.go:2092 +0x4fc
+created by net/http.(*Server).Serve in goroutine 35
+	/usr/local/go/src/net/http/server.go:3360 +0x3dc
+2025/01/06 21:07:24 authHelpers.go:49: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InJlbWVtYmVybWUzIiwicGFzc3dvcmQiOiIiLCJpc0xvZ2dlZEluIjp0cnVlLCJwb3N0cyI6W10sInNjb3JlIjowfQ.0u3y12igshEpMRnvwehkKTKaizpbxr3lfwPJKM4DJ3w
+2025/01/06 21:07:24 handlers.go:174: bt: feciojfecoij
+2025/01/06 21:07:24 handlers.go:163: open public/temp/u-3947564202.png: no such file or directory
+2025/01/06 21:07:24 server.go:3489: http: panic serving [::1]:54470: runtime error: invalid memory address or nil pointer dereference
+goroutine 8 [running]:
+net/http.(*conn).serve.func1()
+	/usr/local/go/src/net/http/server.go:1947 +0xb0
+panic({0x1024ee000?, 0x10282cc60?})
+	/usr/local/go/src/runtime/panic.go:785 +0x124
+os.(*File).Name(...)
+	/usr/local/go/src/os/file.go:62
+main.submitRoot({0x10256b1e8, 0x1400016e0e0}, 0x1400011a3c0)
+	/Users/john/programs/recent/tagmachine.xyz/handlers.go:166 +0x5bc
+net/http.HandlerFunc.ServeHTTP(0x1400011a000?, {0x10256b1e8?, 0x1400016e0e0?}, 0x14000123220?)
+	/usr/local/go/src/net/http/server.go:2220 +0x38
+main.registerRoutes.checkAuth.func5({0x10256b1e8, 0x1400016e0e0}, 0x1400011a000)
+	/Users/john/programs/recent/tagmachine.xyz/checkAuth.go:52 +0x25c
+net/http.HandlerFunc.ServeHTTP(0x1400016e338?, {0x10256b1e8?, 0x1400016e0e0?}, 0x1400010cb10?)
+	/usr/local/go/src/net/http/server.go:2220 +0x38
+net/http.(*ServeMux).ServeHTTP(0x10?, {0x10256b1e8, 0x1400016e0e0}, 0x1400011a000)
+	/usr/local/go/src/net/http/server.go:2747 +0x1b4
+net/http.serverHandler.ServeHTTP({0x102569c50?}, {0x10256b1e8?, 0x1400016e0e0?}, 0x6?)
+	/usr/local/go/src/net/http/server.go:3210 +0xbc
+net/http.(*conn).serve(0x1400017c090, {0x10256b8e8, 0x1400007e210})
+	/usr/local/go/src/net/http/server.go:2092 +0x4fc
+created by net/http.(*Server).Serve in goroutine 35
+	/usr/local/go/src/net/http/server.go:3360 +0x3dc
