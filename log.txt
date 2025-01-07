@@ -7,3 +7,12 @@
 2025/01/07 15:10:04 main.go:26: Server started @ http://localhost:9002
 2025/01/07 15:10:07 checkAuth.go:23: http: named cookie not present
 2025/01/07 15:12:56 main.go:26: Server started @ http://localhost:9002
+2025/01/07 15:15:54 checkAuth.go:23: http: named cookie not present
+2025/01/07 15:16:00 checkAuth.go:23: http: named cookie not present
+2025/01/07 15:16:06 authHelpers.go:49: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InJlbWVtYmVybWUzIiwicGFzc3dvcmQiOiIiLCJpc0xvZ2dlZEluIjp0cnVlLCJwb3N0cyI6W10sInNjb3JlIjowfQ.rz25487W7wzlLS47NFQJW7DJoWduT5DY34mjD9SVPIU
+2025/01/07 15:16:13 authHelpers.go:49: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InJlbWVtYmVybWUzIiwicGFzc3dvcmQiOiIiLCJpc0xvZ2dlZEluIjp0cnVlLCJwb3N0cyI6W10sInNjb3JlIjowfQ.rz25487W7wzlLS47NFQJW7DJoWduT5DY34mjD9SVPIU
+2025/01/07 15:16:13 handlers.go:179: bt: ewfewf
+2025/01/07 15:16:13 handlers.go:229:  test
+2025/01/07 15:16:13 authHelpers.go:49: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InJlbWVtYmVybWUzIiwicGFzc3dvcmQiOiIiLCJpc0xvZ2dlZEluIjp0cnVlLCJwb3N0cyI6W10sInNjb3JlIjowfQ.rz25487W7wzlLS47NFQJW7DJoWduT5DY34mjD9SVPIU
+2025/01/07 15:16:13 authHelpers.go:49: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InJlbWVtYmVybWUzIiwicGFzc3dvcmQiOiIiLCJpc0xvZ2dlZEluIjp0cnVlLCJwb3N0cyI6W10sInNjb3JlIjowfQ.rz25487W7wzlLS47NFQJW7DJoWduT5DY34mjD9SVPIU
+2025/01/07 15:16:45 main.go:26: Server started @ http://localhost:9002
