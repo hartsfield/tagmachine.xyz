@@ -25,6 +25,34 @@ minimum requirements:
     # Start Redis
     idk how on a mac actually, it usually just starts itself
 
+    # Hierarchic explanations
+    <tagmachine.xyz/
+
+          ▾ internal/         # The files contained in internal/* are "templates"
+            ▸ components/     # where the components live
+            ▸ pages/          # where the pages live
+            ▸ shared/         # where we keeps shared resources, which can be accessed by all pages and components
+
+          ▸ public/           # public files, where we store/save images
+
+          authHelpers.go
+          checkAuth.go
+          globals.go
+          handlers.go
+          helpers.go
+          main.go
+          router.go
+          server.go
+          signin.go
+          signout.go
+          signup.go
+          viewdata.go
+          autoload.sh
+          bolt.conf.json
+          LICENSE
+          README.md
+          tagmachine
+
 # This is a re-write of TagMachine (https://github.com/hartsfield/tagmachine)
 
 NOTE: This program is still in alpha phases and is extremely unstable. Don't 
